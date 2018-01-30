@@ -10,7 +10,7 @@ interface IconProps {
     +size?: number;
 }
 
-export default function Icon({source, size}: SimpleButtonProps) {
+export default function Icon({source, size}: IconProps) {
   size = size || ICON_SIZE;
   const opacity = ICON_OPACITY;
   return (

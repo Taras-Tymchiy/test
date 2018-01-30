@@ -13,8 +13,8 @@ import { textRegular, textPrimary } from '../styles/mixins';
 
 interface SimpleButtonProps {
     +title: string;
-    +style: any;
-    +textStyle: any;
+    +style?: any;
+    +textStyle?: any;
     +onPress: () => void;
 }
 

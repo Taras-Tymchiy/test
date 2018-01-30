@@ -13,7 +13,7 @@ import { QueryParams } from "./types/QueryParams";
 // }
 
 export function getItems(queryParams: QueryParams): Promise<Post[]> {
-    const urlParams = new URLSearchParams({limit: queryParams.count});
+    const urlParams = new URLSearchParams({limit: String(queryParams.count)}).toString();
     const url = `${queryParams.url}?${urlParams}`;
     return fetch(url, {
         headers: {

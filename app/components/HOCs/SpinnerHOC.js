@@ -1,13 +1,16 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
 
-export default (Comp: ReactClass<*>) => {
-  return ({ spinner, children, ...props }: Object) => (
+type SpinnerProps = {
+  spinner?: boolean,
+  error?: Error,
+};
+
+export default function SpinnerHOC<Props: SpinnerProps, Component: React.ComponentType<$Diff<Props, SpinnerProps>>>(Comp: Component): React.ComponentType<Props>  {
+  return ({ spinner, ...props }: Props) => (
     <View style={{ flex: 1 }}>
-      <Comp {...props}>
-        {children}
-      </Comp>
+      <Comp {...props} />
       {spinner &&
         <View
           style={[

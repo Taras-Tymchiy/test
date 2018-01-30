@@ -9,6 +9,7 @@ import SettingsView from './SettingsView';
 
 interface SettingsScreenProps {
   +pullInterval: number;
+  +postsCount: number;
   +postsUrl: string;
   +actions: typeof settingsActions;
 }
