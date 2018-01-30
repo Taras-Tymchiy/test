@@ -10,13 +10,13 @@ import { Post } from '../../entities/Post';
 
 const DEFAULT_FORMAT = 'DD/MM/YYYY HH:mm';
 
-interface DateTimeTextProps {
+export interface FormattedDateProps {
   value: moment.MomentInput;
   format?: string;
   style?: any
 }
 
-export default function FormattedDate({value, format, style}: DateTimeTextProps) {
+export default function FormattedDate({value, format, style}: FormattedDateProps) {
   const formattedDate = moment(value).format(format || DEFAULT_FORMAT);
   return (
     <Text style={style}>

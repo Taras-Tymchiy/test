@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an Icon using Snapshots 1`] = `
+<Image
+  resizeMethod="scale"
+  resizeMode="center"
+  source={undefined}
+  style={
+    Object {
+      "height": 16,
+      "opacity": 0.5,
+      "width": 16,
+    }
+  }
+/>
+`;
+
+exports[`renders an Icon with custom size using Snapshots 1`] = `
+<Image
+  resizeMethod="scale"
+  resizeMode="center"
+  source={undefined}
+  style={
+    Object {
+      "height": 33,
+      "opacity": 0.5,
+      "width": 33,
+    }
+  }
+/>
+`;

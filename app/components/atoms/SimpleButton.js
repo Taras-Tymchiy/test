@@ -11,7 +11,7 @@ import {
 import { COLOR_IOS_BUTTON_TEXT, FONT_SIZE_M } from '../styles/constants';
 import { textRegular, textPrimary } from '../styles/mixins';
 
-interface SimpleButtonProps {
+export interface SimpleButtonProps {
     +title: string;
     +style?: any;
     +textStyle?: any;

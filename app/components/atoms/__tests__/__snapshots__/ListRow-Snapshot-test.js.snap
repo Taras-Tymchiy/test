@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a ListRow using Snapshots 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFF",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#CCC",
+        "padding": 12,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`renders an ListRow with children using Snapshots 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFF",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#CCC",
+        "padding": 12,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    Test
+  </Text>
+</View>
+`;

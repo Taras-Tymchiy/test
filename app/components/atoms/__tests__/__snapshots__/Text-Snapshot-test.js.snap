@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a TextHeader using Snapshots 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222",
+        "fontSize": 20,
+        "fontWeight": "bold",
+      },
+      undefined,
+    ]
+  }
+>
+  TextHeader
+</Text>
+`;
+
+exports[`renders a TextMuted using Snapshots 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#A0A0A0",
+        "fontSize": 16,
+        "fontWeight": "normal",
+      },
+      undefined,
+    ]
+  }
+>
+  TextMuted
+</Text>
+`;
+
+exports[`renders a TextPrimary using Snapshots 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222",
+        "fontSize": 16,
+        "fontWeight": "bold",
+      },
+      undefined,
+    ]
+  }
+>
+  TextPrimary
+</Text>
+`;
+
+exports[`renders a TextRegular using Snapshots 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#222",
+        "fontSize": 16,
+        "fontWeight": "normal",
+      },
+      undefined,
+    ]
+  }
+>
+  TextRegular
+</Text>
+`;
+
+exports[`renders a TextSecondary using Snapshots 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "#A0A0A0",
+        "fontSize": 14,
+        "fontWeight": "normal",
+      },
+      undefined,
+    ]
+  }
+>
+  TextSecondary
+</Text>
+`;

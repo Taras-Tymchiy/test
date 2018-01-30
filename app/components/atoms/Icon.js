@@ -5,7 +5,7 @@ import {
   } from 'react-native';
 import { COLOR_IOS_BUTTON_TEXT, FONT_SIZE_M, ICON_SIZE, ICON_OPACITY } from '../styles/constants';
 
-interface IconProps {
+export interface IconProps {
     +source: any;
     +size?: number;
 }

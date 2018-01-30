@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a ScreenView using Snapshots 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#EEE",
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`renders an ScreenView with children using Snapshots 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#EEE",
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    Test
+  </Text>
+</View>
+`;
