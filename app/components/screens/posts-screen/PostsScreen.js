@@ -45,9 +45,7 @@ export class PostsScreen extends Component<PostsScreenProps> {
   }
   
   stopPulling() {
-    if (this.props.isPulling) {
-      this.props.actions.stopPullingPosts();
-    }
+    this.props.actions.stopPullingPosts();
   }
 
   componentWillUnmount() {

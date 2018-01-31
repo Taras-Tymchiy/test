@@ -6,7 +6,6 @@ import * as settingsActions from '../../../store/actions/SettingsActions';
 import { type RootState } from '../../../store/reducers/RootState';
 import SettingsView from './SettingsView';
 
-
 interface SettingsScreenProps {
   +pullInterval: number;
   +postsCount: number;
