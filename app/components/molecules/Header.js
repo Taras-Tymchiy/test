@@ -24,8 +24,7 @@ class Header extends React.PureComponent<HeaderProps> {
   render() {
     const appBarHeight = STATUSBAR_HEIGHT + APPBAR_HEIGHT;
     const containerStyles = [ styles.container, { 
-      height: appBarHeight,
-      marginTop: STATUSBAR_HEIGHT
+      height: appBarHeight
     } ];
     const { 
       title,
