@@ -13,8 +13,7 @@ import { QueryParams } from "./types/QueryParams";
 // }
 
 export function getItems(queryParams: QueryParams): Promise<Post[]> {
-    const urlParams = new URLSearchParams({limit: String(queryParams.count)}).toString();
-    const url = `${queryParams.url}?${urlParams}`;
+    const url = `${queryParams.url}?limit=${queryParams.count}`;
     return fetch(url, {
         headers: {
             'Accept': 'application/json',
