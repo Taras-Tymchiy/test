@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect, Dispatch } from 'react-redux';
 import * as postsActions from '../../../store/actions/PostActions';
-import { type PostsState } from '../../../store/reducers/postsReducer';
+import { type PostsState } from '../../../store/reducers/StateTypes';
 import { Post } from '../../../entities/Post';
 import PostList from './PostList';
 import PostsHeaderButton from './PostsHeaderButton';
-import { type RootState } from '../../../store/reducers/RootState';
+import { type RootState } from '../../../store/reducers/StateTypes';
 import SpinnerHOC from '../../HOCs/SpinnerHOC';
 import ErrorHOC from '../../HOCs/ErrorHOC';
 
@@ -28,8 +28,8 @@ const PostsListsEnhanced = SpinnerHOC(ErrorHOC(PostList));
 // exporting for testing purposes
 export class PostsScreen extends Component<PostsScreenProps> {
 
-  static navigationOptions = ({ navigation }) => ({
-    headerRight: <PostsHeaderButton onPress={()=> navigation.navigate('Settings')} title="Settings" />,
+  static navigationOptions = (props: any) => ({
+    headerRight: <PostsHeaderButton {...props}  />,
   });
 
   render() {

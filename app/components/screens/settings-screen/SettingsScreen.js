@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as settingsActions from '../../../store/actions/SettingsActions';
-import { type RootState } from '../../../store/reducers/RootState';
+import { type RootState } from '../../../store/reducers/StateTypes';
 import SettingsView from './SettingsView';
 
 interface SettingsScreenProps {

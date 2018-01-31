@@ -4,14 +4,7 @@ import { handleAction, Action, ActionFunctions, ActionFunction0, Reducer } from 
 import createReducer from './utils/createReducer';
 import * as postActions from '../actions/PostActions';
 import { type PostsAction } from "../actions/PostActions";
-
-
-export type PostsState = {
-    +data: Post[],
-    +isPulling: boolean;
-    +isLoading: boolean;
-    +error: Error | null;
-}
+import { type PostsState } from "./StateTypes";
 
 const initialState: PostsState = {
     data: [],

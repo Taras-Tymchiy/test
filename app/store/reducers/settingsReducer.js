@@ -3,13 +3,7 @@ import { handleAction, Action, ActionFunctions, ActionFunction0, Reducer } from 
 import createReducer from './utils/createReducer';
 import * as settingsActions from '../actions/SettingsActions';
 import { type SettingsAction } from "../actions/SettingsActions";
-
-
-export type SettingsState = {
-  +pullInterval: number;
-  +postsUrl: string;
-  +postsCount: number;
-}
+import { type SettingsState } from "./StateTypes";
 
 const initialState: SettingsState = {
   postsCount: 10,
