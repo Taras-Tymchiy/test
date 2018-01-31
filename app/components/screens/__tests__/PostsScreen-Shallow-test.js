@@ -19,8 +19,8 @@ const props = {
 
 beforeEach(()=> {
   props.actions = {
-    startPullingPosts: jest.fn(),
-    stopPullingPosts: jest.fn()
+    startSync: jest.fn(),
+    stopSync: jest.fn()
   };
 });
 
@@ -30,10 +30,10 @@ it('calls actions on mount/unmount', () => {
   );
   const inst = wrapper.instance();
 
-  expect(props.actions.startPullingPosts.mock.calls.length).toEqual(1);
+  expect(props.actions.startSync.mock.calls.length).toEqual(1);
   
   inst.componentWillUnmount();
-  expect(props.actions.stopPullingPosts.mock.calls.length).toEqual(1);
+  expect(props.actions.stopSync.mock.calls.length).toEqual(1);
 });
 
 it('calls actions on receive props', () => {
@@ -43,8 +43,8 @@ it('calls actions on receive props', () => {
   const inst = wrapper.instance();
 
   wrapper.setProps({...props, isCurrentView: false});
-  expect(props.actions.stopPullingPosts.mock.calls.length).toEqual(1);
+  expect(props.actions.stopSync.mock.calls.length).toEqual(1);
 
   wrapper.setProps({...props, isPulling: false, isCurrentView: true});
-  expect(props.actions.startPullingPosts.mock.calls.length).toEqual(2);
+  expect(props.actions.startSync.mock.calls.length).toEqual(2);
 });

@@ -40,12 +40,12 @@ export class PostsScreen extends Component<PostsScreenProps> {
   startPulling(props: PostsScreenProps) {
     const { actions, pullInterval, postsUrl, isPulling, postsCount } = props;
     if (!isPulling) {
-      actions.startPullingPosts({url: postsUrl, count: postsCount}, pullInterval);
+      actions.startSync({url: postsUrl, count: postsCount}, pullInterval);
     }
   }
   
   stopPulling() {
-    this.props.actions.stopPullingPosts();
+    this.props.actions.stopSync();
   }
 
   componentWillUnmount() {

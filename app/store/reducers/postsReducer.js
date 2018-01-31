@@ -24,10 +24,10 @@ const initialState: PostsState = {
 export default function postsReducer(state: PostsState = initialState, action: PostsAction): PostsState {
   console.log('dispatching', action);
   switch(action.type) {
-    case 'POSTS_START_PULLING': return { ...state,
+    case 'POSTS_START_SYNC': return { ...state,
       isPulling: true
     };
-    case 'POSTS_STOP_PULLING': return { ...state,
+    case 'POSTS_STOP_SYNC': return { ...state,
       isPulling: false
     };
     case 'POSTS_LOAD': return { ...state, 

@@ -48,10 +48,10 @@ it('maps state to ConnectedPostsScreen props', () => {
 
 it('maps actions to ConnectedPostsScreen', () => {
   const { actions } = container.props();
-  actions.startPullingPosts();
-  actions.stopPullingPosts();
+  actions.startSync();
+  actions.stopSync();
   const dispatched = store.getActions();
   expect(dispatched.length).toBe(2);
-  expect(dispatched[0].type).toBe('POSTS_START_PULLING')
-  expect(dispatched[1].type).toBe('POSTS_STOP_PULLING')
+  expect(dispatched[0].type).toBe('POSTS_START_SYNC')
+  expect(dispatched[1].type).toBe('POSTS_STOP_SYNC')
 });

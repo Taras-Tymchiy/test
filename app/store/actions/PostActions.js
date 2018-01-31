@@ -7,20 +7,20 @@ export type LoadPostsAction = { type: 'POSTS_LOAD', queryParams: QueryParams };
 export type LoadPostsSuccessAction = { type: 'POSTS_LOAD_SUCCESS', posts: Post[] };
 export type LoadPostsFailAction = { type: 'POSTS_LOAD_FAIL', error: Error };
 export type LoadPostsCancelledAction = { type: 'POSTS_LOAD_CANCELLED' };
-export type StartPullingPostsAction = { 
-    type: 'POSTS_START_PULLING', 
+export type StartSyncPostsAction = { 
+    type: 'POSTS_START_SYNC', 
     queryParams: QueryParams,
     interval: number
 };
-export type StopPullingPostsAction = { type: 'POSTS_STOP_PULLING' };
+export type StopSyncPostsAction = { type: 'POSTS_STOP_SYNC' };
 
 export type PostsAction =
   | LoadPostsAction
   | LoadPostsSuccessAction
   | LoadPostsFailAction
   | LoadPostsCancelledAction
-  | StartPullingPostsAction
-  | StopPullingPostsAction;
+  | StartSyncPostsAction
+  | StopSyncPostsAction;
 
 export function loadPosts(queryParams: QueryParams ): LoadPostsAction {
   return { type: 'POSTS_LOAD', queryParams };
@@ -38,14 +38,14 @@ export function loadPostsCancelled(): LoadPostsCancelledAction {
   return { type: 'POSTS_LOAD_CANCELLED' };
 }
 
-export function startPullingPosts(
+export function startSync(
   queryParams: QueryParams, interval: number
-): StartPullingPostsAction {
-  return { type: 'POSTS_START_PULLING', queryParams, interval };
+): StartSyncPostsAction {
+  return { type: 'POSTS_START_SYNC', queryParams, interval };
 }
 
-export function stopPullingPosts(): StopPullingPostsAction {
-  return { type: 'POSTS_STOP_PULLING' };
+export function stopSync(): StopSyncPostsAction {
+  return { type: 'POSTS_STOP_SYNC' };
 }
 
 // we could define the above actions by the following 3 lines of code

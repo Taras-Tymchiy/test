@@ -15,8 +15,8 @@ const props = {
   postsUrl: 'test',
   isCurrentView: false,
   actions: {
-    startPullingPosts: () => null,
-    stopPullingPosts: () => null
+    startSync: () => null,
+    stopSync: () => null
   }
 };
 
