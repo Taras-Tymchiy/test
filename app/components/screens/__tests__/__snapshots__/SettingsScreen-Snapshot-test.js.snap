@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders posts in a SettingsScreen using Snapshots 1`] = `
+<SettingsView undefined
+  intervalChanged={[Function]}
+  postsCount={10}
+  postsCountChanged={[Function]}
+  postsUrl="test"
+  pullInterval={undefined}
+  urlChanged={[Function]}
+/>
+`;

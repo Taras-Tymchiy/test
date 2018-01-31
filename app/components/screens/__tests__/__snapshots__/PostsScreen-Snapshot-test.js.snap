@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders posts in a PostsScreen using Snapshots 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <PostList undefined
+      posts={
+        Array [
+          Object {
+            "created_at": "2015-01-01",
+            "id": 1,
+            "id_str": "1",
+            "text": "post text 1",
+            "user": Object {
+              "id": 1,
+              "name": "John Snow",
+            },
+          },
+          Object {
+            "created_at": "2015-01-02",
+            "id": 2,
+            "id_str": "2",
+            "text": "post text 2",
+            "user": Object {
+              "id": 2,
+              "name": "Barack Obama",
+            },
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

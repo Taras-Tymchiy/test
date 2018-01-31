@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as settingsActions from '../../../store/actions/SettingsActions';
-import { type RootState } from '../../../store/reducers';
+import { type RootState } from '../../../store/reducers/RootState';
 import SettingsView from './SettingsView';
 
 
@@ -14,7 +14,7 @@ interface SettingsScreenProps {
   +actions: typeof settingsActions;
 }
 
-class SettingsScreen extends Component<SettingsScreenProps> {
+export class SettingsScreen extends Component<SettingsScreenProps> {
   render() {
     const { pullInterval, postsUrl, actions, postsCount } = this.props;
     return (

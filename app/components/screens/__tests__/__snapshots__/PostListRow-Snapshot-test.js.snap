@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a post in PostListRow using Snapshots 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFF",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#CCC",
+        "padding": 12,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginBottom": 6,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#222",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          },
+          undefined,
+        ]
+      }
+    >
+      John Snow
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#A0A0A0",
+            "fontSize": 14,
+            "fontWeight": "normal",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={undefined}
+      >
+        01/01/2015 00:00
+      </Text>
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "#222",
+          "fontSize": 16,
+          "fontWeight": "normal",
+        },
+        undefined,
+      ]
+    }
+  >
+    post text 1
+  </Text>
+</View>
+`;

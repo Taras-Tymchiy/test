@@ -1,6 +1,6 @@
 import { StackNavigator } from 'react-navigation';
-import PostsScreen from './screens/posts-screen';
-import SettingsScreen from './screens/settings-screen';
+import PostsScreen from './screens/posts-screen/PostsScreen';
+import SettingsScreen from './screens/settings-screen/SettingsScreen';
 
 const RootNavigator = StackNavigator({
   Posts: {

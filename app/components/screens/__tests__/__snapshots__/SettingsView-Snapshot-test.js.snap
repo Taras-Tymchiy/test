@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders posts in a SettingsView using Snapshots 1`] = `
+<View
+  style={
+    Object {
+      "borderColor": "#CCC",
+      "borderTopWidth": 0.5,
+      "marginBottom": 24,
+      "marginTop": 24,
+    }
+  }
+>
+  <FormControlWrapper undefined
+    onDiscard={[Function]}
+    onSave={[Function]}
+    title="Endpoint url"
+    value="test"
+  >
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      onChangeText={[Function]}
+      value="test"
+    />
+  </FormControlWrapper undefined>
+  <FormControlWrapper undefined
+    description="The number of posts to fetch from API and display (0 means unlimited)"
+    keyboardType="numeric"
+    onDiscard={[Function]}
+    onSave={[Function]}
+    title="Posts number"
+    value="10"
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      value="10"
+    />
+  </FormControlWrapper undefined>
+  <FormControlWrapper undefined
+    description="Synchronization interval in milliseconds. Values less than 1000 are not allowed and will be overwritten to 1000"
+    keyboardType="numeric"
+    onDiscard={[Function]}
+    onSave={[Function]}
+    title="Sync interval"
+    value="undefined ms"
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      value="undefined"
+    />
+  </FormControlWrapper undefined>
+</View>
+`;
