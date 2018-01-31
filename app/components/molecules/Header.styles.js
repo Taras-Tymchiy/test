@@ -57,7 +57,8 @@ export default StyleSheet.create({
     paddingRight: SPACING_M
   },
   rightButtonText: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'right'
   },
   leftButton: {
     width: TITLE_OFFSET,
