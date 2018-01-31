@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a ErrorHOC wrapped View with error using Snapshots 1`] = `
+<View>
+  <View />
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EEE",
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#222",
+            "fontSize": 16,
+            "fontWeight": "normal",
+          },
+          Object {
+            "color": "#F22",
+          },
+        ]
+      }
+    >
+      Oops
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#222",
+            "fontSize": 16,
+            "fontWeight": "normal",
+          },
+          Object {
+            "color": "#F22",
+          },
+        ]
+      }
+    >
+      test
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders a ErrorHOC wrapped View without error using Snapshots 1`] = `
+<View>
+  <View />
+</View>
+`;
