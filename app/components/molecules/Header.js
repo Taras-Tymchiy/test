@@ -22,8 +22,7 @@ type HeaderProps = {
 
 class Header extends React.PureComponent<HeaderProps> {
   render() {
-    const appBarHeight = Platform.OS === 'ios' ? (isLandscape ? 32 : 44) : 56;
-    const containerStyles = [ styles.container, { height: appBarHeight } ];
+    const containerStyles = [ styles.container, { height: APPBAR_HEIGHT } ];
     const { 
       title,
       leftButtonTitle, 

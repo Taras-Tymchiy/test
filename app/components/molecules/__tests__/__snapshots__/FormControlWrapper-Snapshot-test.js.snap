@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a FormControlWrapper using Snapshots 1`] = `
+<View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#FFF",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#CCC",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "opacity": 1,
+        "padding": 12,
+        "paddingRight": 6,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "space-between",
+          "marginRight": 6,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#222",
+              "fontSize": 16,
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
+        }
+      >
+        Test title
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#A0A0A0",
+              "fontSize": 14,
+              "fontWeight": "normal",
+            },
+            undefined,
+          ]
+        }
+      >
+        testValue
+      </Text>
+    </View>
+    <Image
+      resizeMethod="scale"
+      resizeMode="center"
+      source={
+        Object {
+          "uri": "ios7-arrow-right.png",
+        }
+      }
+      style={
+        Object {
+          "height": 16,
+          "opacity": 0.5,
+          "width": 16,
+        }
+      }
+    />
+  </View>
+  <Modal
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    visible={false}
+  >
+    <Header: 
+      leftButtonTitle="Back"
+      onLeftButtonPress={[Function]}
+      onRightButtonPress={[Function]}
+      rightButtonTitle="Done"
+      title="Test title"
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#EEE",
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "padding": 12,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+        >
+          test description
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#CCC",
+            "borderTopWidth": 0.5,
+            "padding": 12,
+          }
+        }
+      />
+    </View>
+  </Modal>
+</View>
+`;
