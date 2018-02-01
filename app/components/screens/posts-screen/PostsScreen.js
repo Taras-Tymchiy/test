@@ -14,9 +14,9 @@ import ErrorHOC from '../../HOCs/ErrorHOC';
 export interface PostsScreenProps {
   +posts: Post[];
   +isLoading: boolean;
-  +isPulling: boolean;
+  +syncInProgess: boolean;
   +error: Error;
-  +pullInterval: number;
+  +syncInterval: number;
   +postsCount: number;
   +postsUrl: string;
   +isCurrentView: boolean;
@@ -37,23 +37,23 @@ export class PostsScreen extends Component<PostsScreenProps> {
     return <PostsListsEnhanced posts={posts} spinner={isLoading && !posts.length} error={error} />
   }
 
-  startPulling(props: PostsScreenProps) {
-    const { actions, pullInterval, postsUrl, isPulling, postsCount } = props;
-    if (!isPulling) {
-      actions.startSync({url: postsUrl, count: postsCount}, pullInterval);
+  startSync(props: PostsScreenProps) {
+    const { actions, syncInterval, postsUrl, syncInProgess, postsCount } = props;
+    if (!syncInProgess) {
+      actions.startSync({url: postsUrl, count: postsCount}, syncInterval);
     }
   }
   
-  stopPulling() {
+  stopSync() {
     this.props.actions.stopSync();
   }
 
   componentWillUnmount() {
-    this.stopPulling();
+    this.stopSync();
   }
   
   componentDidMount() {
-    this.startPulling(this.props);
+    this.startSync(this.props);
   }
 
   componentWillReceiveProps(nextProps: PostsScreenProps) {
@@ -61,9 +61,9 @@ export class PostsScreen extends Component<PostsScreenProps> {
     // see the PR https://github.com/react-navigation/react-navigation/pull/3345
     // but for now will use some dirty tricks to determine whether current page is active
     if (nextProps.isCurrentView) {
-      this.startPulling(nextProps);
+      this.startSync(nextProps);
     } else {
-      this.stopPulling();
+      this.stopSync();
     }
   }
 
@@ -78,12 +78,12 @@ function mapDispatchToProps(dispatch: Dispatch<{}>) {
 function mapStateToProps(state: RootState) {
   return {
       posts: state.posts.data,
-      isPulling: state.posts.isPulling,
+      syncInProgess: state.posts.syncInProgess,
       isLoading: state.posts.isLoading,
       error: state.posts.error,
       postsUrl: state.settings.postsUrl,
       postsCount: state.settings.postsCount,
-      pullInterval: state.settings.pullInterval,
+      syncInterval: state.settings.syncInterval,
       isCurrentView: state.navigation.index === 0 
   };
 }

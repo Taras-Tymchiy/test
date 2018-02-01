@@ -8,7 +8,7 @@ jest.mock('../posts-screen/PostList', (props) => `PostList ${props}`);
 const props = {
   posts,
   isLoading: false,
-  isPulling: false,
+  syncInProgess: false,
   error: null,
   pullIntervl: 5000,
   postsCount: 10,

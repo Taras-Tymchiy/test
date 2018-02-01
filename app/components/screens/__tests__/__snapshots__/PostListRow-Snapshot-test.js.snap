@@ -61,7 +61,7 @@ exports[`renders a post in PostListRow using Snapshots 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        01/01/2015 00:00
+        20/02/2018 15:01
       </Text>
     </Text>
   </View>

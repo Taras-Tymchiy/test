@@ -9,13 +9,13 @@ const state = {
   posts: {
     data: [],
     dataLoaded: false,
-    isPulling: false,
+    syncInProgess: false,
     isLoading: false,
     error: null
   },
   settings: {
     postsCount: 10,
-    pullInterval: 5000,
+    syncInterval: 5000,
     postsUrl: 'https://api.massrelevance.com/MassRelDemo/kindle.json'
   },
   navigation: {
@@ -35,14 +35,14 @@ it('renders ConnectedPostsScreen', () => {
 });
 
 it('maps state to ConnectedPostsScreen props', () => {
-  const { posts, isPulling, isLoading, error, postsUrl, postsCount, pullInterval, isCurrentView} = container.props();
+  const { posts, syncInProgess, isLoading, error, postsUrl, postsCount, syncInterval, isCurrentView} = container.props();
   expect(posts).toEqual(state.posts.data);
-  expect(isPulling).toEqual(state.posts.isPulling);
+  expect(syncInProgess).toEqual(state.posts.syncInProgess);
   expect(isLoading).toEqual(state.posts.isLoading);
   expect(error).toEqual(state.posts.error);
   expect(postsUrl).toEqual(state.settings.postsUrl);
   expect(postsCount).toEqual(state.settings.postsCount);
-  expect(pullInterval).toEqual(state.settings.pullInterval);
+  expect(syncInterval).toEqual(state.settings.syncInterval);
   expect(isCurrentView).toEqual(state.navigation.index === 0);
 });
 

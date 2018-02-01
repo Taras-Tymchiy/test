@@ -22,7 +22,7 @@ export function* loadPosts(queryParams: QueryParams) {
   }
 }
 
-export function* startPulling({interval, queryParams}: StartSyncPostsAction) {
+export function* startSync({interval, queryParams}: StartSyncPostsAction) {
   while (true) {
     yield fork(loadPosts, queryParams);
     yield take(['POSTS_LOAD_SUCCESS', 'POSTS_LOAD_FAIL']);
@@ -34,7 +34,7 @@ export function* startPulling({interval, queryParams}: StartSyncPostsAction) {
 export default function* postsSaga() {
   let action: StartSyncPostsAction;
   while (action = yield take('POSTS_START_SYNC')) {
-    const task = yield fork(startPulling, action);
+    const task = yield fork(startSync, action);
     yield take('POSTS_STOP_SYNC');
     yield cancel(task);
   }

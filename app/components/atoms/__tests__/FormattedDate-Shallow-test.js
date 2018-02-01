@@ -4,7 +4,8 @@ import { shallow } from 'enzyme';
 import FormattedDate, { FormattedDateProps } from '../FormattedDate';
 
 const props: FormattedDateProps = {
-    value: '2015-01-01'
+    value: '2015-01-01',
+    inputFormat: 'YYYY-MM-DD'
 };
 
 it('renders a FormattedDate using Enzyme 1', () => {

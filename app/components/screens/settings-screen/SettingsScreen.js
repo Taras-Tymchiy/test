@@ -7,7 +7,7 @@ import { type RootState } from '../../../store/reducers/StateTypes';
 import SettingsView from './SettingsView';
 
 interface SettingsScreenProps {
-  +pullInterval: number;
+  +syncInterval: number;
   +postsCount: number;
   +postsUrl: string;
   +actions: typeof settingsActions;
@@ -15,10 +15,10 @@ interface SettingsScreenProps {
 
 export class SettingsScreen extends Component<SettingsScreenProps> {
   render() {
-    const { pullInterval, postsUrl, actions, postsCount } = this.props;
+    const { syncInterval, postsUrl, actions, postsCount } = this.props;
     return (
       <SettingsView 
-        pullInterval={pullInterval}
+        syncInterval={syncInterval}
         postsUrl={postsUrl}
         postsCount={postsCount}
         intervalChanged={this.updateInterval}
@@ -42,6 +42,6 @@ export class SettingsScreen extends Component<SettingsScreenProps> {
 }
 
 export default connect(
-  ({settings: {pullInterval, postsUrl, postsCount}}: RootState) => ({pullInterval, postsUrl, postsCount}),
+  ({settings: {syncInterval, postsUrl, postsCount}}: RootState) => ({syncInterval, postsUrl, postsCount}),
   dispatch => ({actions: bindActionCreators(settingsActions, dispatch)})
 )(SettingsScreen);

@@ -7,14 +7,14 @@ import { type SettingsState } from "./StateTypes";
 
 const initialState: SettingsState = {
   postsCount: 10,
-  pullInterval: 5000,
+  syncInterval: 5000,
   postsUrl: 'https://api.massrelevance.com/MassRelDemo/kindle.json'
 };
 
 export default function settingsReducer(state: SettingsState = initialState, action: SettingsAction): SettingsState {
   switch(action.type) {
     case 'SETTINGS_UPDATE_INTERVAL': return { ...state,
-      pullInterval: Math.max(action.interval, 1000)
+      syncInterval: Math.max(action.interval, 1000)
     };
     case 'SETTINGS_UPDATE_URL': return { ...state,
       postsUrl: action.url

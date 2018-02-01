@@ -9,19 +9,18 @@ import { type PostsState } from "./StateTypes";
 const initialState: PostsState = {
     data: [],
     dataLoaded: false,
-    isPulling: false,
+    syncInProgess: false,
     isLoading: false,
     error: null
 };
 
 export default function postsReducer(state: PostsState = initialState, action: PostsAction): PostsState {
-  console.log('dispatching', action);
   switch(action.type) {
     case 'POSTS_START_SYNC': return { ...state,
-      isPulling: true
+      syncInProgess: true
     };
     case 'POSTS_STOP_SYNC': return { ...state,
-      isPulling: false
+      syncInProgess: false
     };
     case 'POSTS_LOAD': return { ...state, 
       isLoading: true 

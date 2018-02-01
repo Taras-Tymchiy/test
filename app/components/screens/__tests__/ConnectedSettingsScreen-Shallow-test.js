@@ -10,7 +10,7 @@ jest.mock('../settings-screen/SettingsView', (props) => `SettingsView ${props}`)
 const state = {
   settings: {
     postsCount: 10,
-    pullInterval: 5000,
+    syncInterval: 5000,
     postsUrl: 'https://api.massrelevance.com/MassRelDemo/kindle.json'
   }
 };
@@ -27,10 +27,10 @@ it('renders ConnectedSettingsScreen', () => {
 });
 
 it('maps state to ConnectedSettingsScreen props', () => {
-  const { postsUrl, postsCount, pullInterval} = container.props();
+  const { postsUrl, postsCount, syncInterval} = container.props();
   expect(postsUrl).toEqual(state.settings.postsUrl);
   expect(postsCount).toEqual(state.settings.postsCount);
-  expect(pullInterval).toEqual(state.settings.pullInterval);
+  expect(syncInterval).toEqual(state.settings.syncInterval);
 });
 
 it('maps actions to ConnectedSettingsScreen', () => {

@@ -6,7 +6,7 @@ exports[`renders posts in a SettingsScreen using Snapshots 1`] = `
   postsCount={10}
   postsCountChanged={[Function]}
   postsUrl="test"
-  pullInterval={undefined}
+  syncInterval={undefined}
   urlChanged={[Function]}
 />
 `;

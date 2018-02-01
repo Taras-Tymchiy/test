@@ -1,6 +1,6 @@
 import { call, put, take, takeEvery, fork, cancel, cancelled } from 'redux-saga/effects';
 import { createMockTask } from 'redux-saga/utils';
-import postsSaga, { startPulling, loadPosts } from '../postsSaga';
+import postsSaga, { startSync, loadPosts } from '../postsSaga';
 import * as postsActions from '../../actions/PostActions';
 import { delay } from 'redux-saga';
 import { getItems } from '../../../api/api';
@@ -9,12 +9,11 @@ import { posts } from '../../../../jest/testData';
 const queryParams = { url: 'test', count: 2 };
 
 it('should listen to start/stop actions in a loop', () => {
-
   const gen = postsSaga();
   for(let i = 2; i > 0; --i) {
     const startSyncAction = postsActions.startSync({}, 1);
     const stopSyncAction = postsActions.stopSync();
-    const forkEffect = fork(startPulling, startSyncAction);
+    const forkEffect = fork(startSync, startSyncAction);
     const task = createMockTask();
   
     expect(gen.next().value)               .toEqual(take(startSyncAction.type));
@@ -24,14 +23,12 @@ it('should listen to start/stop actions in a loop', () => {
   }
   gen.next();
   expect(gen.next(false).done).toEqual(true);
-  
 });
-  
 
 it('should load posts in a loop', () => {
   const interval = 1;
 
-  const gen = startPulling({interval, queryParams});
+  const gen = startSync({interval, queryParams});
   
   for(let i = 2; i > 0; --i) {
     const forkEffect = fork(loadPosts, queryParams);
@@ -51,7 +48,6 @@ it('should call api and dispatch success action on response', () => {
   expect(gen.next().value)     .toEqual(put(postsActions.loadPosts(queryParams)));
   expect(gen.next().value)     .toEqual(call(getItems, queryParams));
   expect(gen.next(posts).value).toEqual(put(postsActions.loadPostsSuccess(posts)));
-  
 });
   
 it('should dispatch fail action on error', () => {  

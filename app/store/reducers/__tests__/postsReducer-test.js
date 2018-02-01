@@ -5,7 +5,7 @@ import { posts } from '../../../../jest/testData';
 const initialState = {
   data: [],
   dataLoaded: false,
-  isPulling: false,
+  syncInProgess: false,
   isLoading: false,
   error: null
 };
@@ -17,14 +17,14 @@ it('should return the initial state', () => {
 it('should handle start sync', () => {
   expect(postsReducer(initialState, postActions.startSync({}, 1))).toEqual({
     ...initialState,
-    isPulling: true
+    syncInProgess: true
   });
 });
 
 it('should handle stop sync', () => {
-  expect(postsReducer({ ...initialState, isPulling: true}, postActions.stopSync())).toEqual({
+  expect(postsReducer({ ...initialState, syncInProgess: true}, postActions.stopSync())).toEqual({
     ...initialState,
-    isPulling: false
+    syncInProgess: false
   });
 });
 

@@ -10,13 +10,13 @@ import FormControlWrapper from '../../molecules/FormControlWrapper';
 import styles from './SettingsView.styles';
 
 type SettingsViewState = {
-  pullInterval: string;
+  syncInterval: string;
   postsUrl: string;
   postsCount: string;
 }
 
 export type SettingsViewProps = {
-  pullInterval: number;
+  syncInterval: number;
   postsUrl: string;
   postsCount: number;
   intervalChanged: (v: number) => void;
@@ -31,10 +31,10 @@ export default class SettingsView
       this.state = this.propsToState(props);
     }
 
-    propsToState({ pullInterval, postsUrl, postsCount }: SettingsViewProps) {
+    propsToState({ syncInterval, postsUrl, postsCount }: SettingsViewProps) {
       return  { 
         postsUrl, 
-        pullInterval: String(pullInterval),
+        syncInterval: String(syncInterval),
         postsCount: String(postsCount)
       };
     }
@@ -45,8 +45,8 @@ export default class SettingsView
 
     toNumeric = (val: string)=> String(val).replace(/[^0-9]/g, ''); 
 
-    onIntervalChange = (v: string) => { this.setState({pullInterval: this.toNumeric(v)}) };
-    onIntervalSave = () => { this.props.intervalChanged(+this.state.pullInterval) };
+    onIntervalChange = (v: string) => { this.setState({syncInterval: this.toNumeric(v)}) };
+    onIntervalSave = () => { this.props.intervalChanged(+this.state.syncInterval) };
 
     onPostsCountChange = (v: string) => { this.setState({postsCount: this.toNumeric(v)}) };
     onPostsCountSave = () => { this.props.postsCountChanged(+(this.state.postsCount || 0)) };
@@ -59,7 +59,7 @@ export default class SettingsView
     };
     
     render () {
-      const { pullInterval, postsUrl, postsCount } = this.state;
+      const { syncInterval, postsUrl, postsCount } = this.state;
       return (
         <View style={styles.container} >
           {/* $FlowFixMe */}
@@ -82,11 +82,11 @@ export default class SettingsView
           <FormControlWrapper 
               title="Sync interval" 
               description="Synchronization interval in milliseconds. Values less than 1000 are not allowed and will be overwritten to 1000"
-              value={`${pullInterval} ms`} 
+              value={`${syncInterval} ms`} 
               onSave={this.onIntervalSave} 
               keyboardType = 'numeric'
               onDiscard={this.onDiscard} >
-            <TextInput value={pullInterval} onChangeText={this.onIntervalChange} />
+            <TextInput value={syncInterval} onChangeText={this.onIntervalChange} />
           </FormControlWrapper>
         </View>
       );

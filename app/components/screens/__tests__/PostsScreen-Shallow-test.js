@@ -9,7 +9,7 @@ jest.mock('../../molecules/FormControlWrapper', (props) => `FormControlWrapper $
 const props = {
   posts,
   isLoading: false,
-  isPulling: false,
+  syncInProgess: false,
   error: null,
   pullIntervl: 5000,
   postsCount: 10,
@@ -45,6 +45,6 @@ it('calls actions on receive props', () => {
   wrapper.setProps({...props, isCurrentView: false});
   expect(props.actions.stopSync.mock.calls.length).toEqual(1);
 
-  wrapper.setProps({...props, isPulling: false, isCurrentView: true});
+  wrapper.setProps({...props, syncInProgess: false, isCurrentView: true});
   expect(props.actions.startSync.mock.calls.length).toEqual(2);
 });

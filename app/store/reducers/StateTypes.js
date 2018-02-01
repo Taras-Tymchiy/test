@@ -2,14 +2,14 @@
 import { type Post } from '../../entities/Post';
 
 export type SettingsState = {
-    +pullInterval: number;
+    +syncInterval: number;
     +postsUrl: string;
     +postsCount: number;
 }  
 
 export type PostsState = {
     +data: Post[],
-    +isPulling: boolean;
+    +syncInProgess: boolean;
     +isLoading: boolean;
     +error: Error | null;
 }

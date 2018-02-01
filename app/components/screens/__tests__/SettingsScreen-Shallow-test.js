@@ -8,7 +8,7 @@ import { posts } from '../../../../jest/testData';
 jest.mock('../../molecules/FormControlWrapper', (props) => `FormControlWrapper ${props}`);
 
 const props = {
-  pullInterval: 5000,
+  syncInterval: 5000,
   postsCount: 10,
   postsUrl: 'test',
   actions: {

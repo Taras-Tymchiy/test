@@ -4,7 +4,7 @@ import { posts } from '../../../../jest/testData';
 
 const initialState = {
   postsCount: 10,
-  pullInterval: 5000,
+  syncInterval: 5000,
   postsUrl: 'https://api.massrelevance.com/MassRelDemo/kindle.json'
 };
 
@@ -15,14 +15,14 @@ it('should return the initial state', () => {
 it('should handle update interval', () => {
   expect(settingsReducer(initialState, settingsActions.updateInterval(33333))).toEqual({
     ...initialState,
-    pullInterval: 33333
+    syncInterval: 33333
   });
 });
 
 it('doesnt allow interval less than 1000', () => {
   expect(settingsReducer(initialState, settingsActions.updateInterval(1))).toEqual({
     ...initialState,
-    pullInterval: 1000
+    syncInterval: 1000
   });
 });
 
