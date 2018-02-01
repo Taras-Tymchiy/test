@@ -8,7 +8,7 @@ import { getItems } from '../../api/api';
 import { type LoadPostsAction, type StartSyncPostsAction } from '../actions/PostActions';
 
 
-function* loadPosts(queryParams: QueryParams) {
+export function* loadPosts(queryParams: QueryParams) {
   try {
     yield put(postActions.loadPosts(queryParams));
     const posts = yield call(getItems, queryParams);
@@ -22,9 +22,9 @@ function* loadPosts(queryParams: QueryParams) {
   }
 }
 
-function* startPulling({interval, queryParams}: StartSyncPostsAction) {
+export function* startPulling({interval, queryParams}: StartSyncPostsAction) {
   while (true) {
-    const task = yield fork(loadPosts, queryParams);
+    yield fork(loadPosts, queryParams);
     yield take(['POSTS_LOAD_SUCCESS', 'POSTS_LOAD_FAIL']);
     yield delay(interval);
   }
