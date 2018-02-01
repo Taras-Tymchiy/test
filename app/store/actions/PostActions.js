@@ -47,11 +47,3 @@ export function startSync(
 export function stopSync(): StopSyncPostsAction {
   return { type: 'POSTS_STOP_SYNC' };
 }
-
-// we could define the above actions by the following 3 lines of code
-// but, unfortenately, flow appears to fail processing such generic function calls.
-// I would consider using typescript instead of flow
-
-// export const loadPosts = createAction<QueryParams>('[Posts] load list success');
-// export const loadPostsSuccess = createAction<Post[]>('[Posts] load list success');
-// export const loadPostsFail = createAction<Error>('[Posts] load list fail');
