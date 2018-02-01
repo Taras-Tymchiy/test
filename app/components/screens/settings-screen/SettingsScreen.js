@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as settingsActions from '../../../store/actions/SettingsActions';
@@ -13,7 +13,7 @@ interface SettingsScreenProps {
   +actions: typeof settingsActions;
 }
 
-export class SettingsScreen extends Component<SettingsScreenProps> {
+export class SettingsScreen extends PureComponent<SettingsScreenProps> {
   render() {
     const { syncInterval, postsUrl, actions, postsCount } = this.props;
     return (

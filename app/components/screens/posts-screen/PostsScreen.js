@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect, Dispatch } from 'react-redux';
 import * as postsActions from '../../../store/actions/PostActions';
@@ -26,7 +26,7 @@ export interface PostsScreenProps {
 const PostsListsEnhanced = SpinnerHOC(ErrorHOC(PostList));
 
 // exporting for testing purposes
-export class PostsScreen extends Component<PostsScreenProps> {
+export class PostsScreen extends PureComponent<PostsScreenProps> {
 
   static navigationOptions = (props: any) => ({
     headerRight: <PostsHeaderButton {...props}  />,

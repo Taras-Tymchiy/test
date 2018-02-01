@@ -25,7 +25,7 @@ export type FormControlWrapperState = {
 }
 
 export default class FormControlWrapper 
-  extends React.Component<FormControlWrapperProps, FormControlWrapperState> {
+  extends React.PureComponent<FormControlWrapperProps, FormControlWrapperState> {
     state = {
       modalVisible: false
     };

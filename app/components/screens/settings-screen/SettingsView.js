@@ -25,7 +25,7 @@ export type SettingsViewProps = {
 }
 
 export default class SettingsView 
-  extends React.Component<SettingsViewProps, SettingsViewState> {
+  extends React.PureComponent<SettingsViewProps, SettingsViewState> {
     constructor(props: SettingsViewProps) {
       super(props);
       this.state = this.propsToState(props);

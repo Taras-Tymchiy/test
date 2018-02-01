@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
 import Navigator from './Navigator';
 
 
-class NavigationContainer extends Component {
+class NavigationContainer extends PureComponent {
   render() {
     return (
       <Navigator navigation={addNavigationHelpers({
