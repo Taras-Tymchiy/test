@@ -8,9 +8,11 @@ interface PostListProps {
   posts: Post[];
 }
 
+const keyExtractor = (post: Post, index) => post.id_str;
+
 export default ({ posts }: PostListProps) => 
   <FlatList
     data={posts}
-    keyExtractor={post => post.id}
+    keyExtractor={keyExtractor}
     renderItem={({item}) => <PostListRow post={item} />}
   />;
